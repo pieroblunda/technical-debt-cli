@@ -1,2 +1,3 @@
-# @ToDO: 1 This is a high priority Python todo file
-# @ToDO: 3 This is a low priority Python todo file
+# @TODO: 1 Python This is a high priority todo file
+# TODO: 2 Python This is a medium priority todo file
+# @TODO: 3 Python This is a low priority todo file

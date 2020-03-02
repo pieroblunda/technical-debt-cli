@@ -1,4 +1,5 @@
 <?php
-  // @ToDo: 1 This is a high priority ToDo in a php file
-  // @ToDo: 3 This is a low priority ToDo in a php file
+  // @TODO: 1 PHP This is a high priority TODO file
+  // TODO: 2 PHP This is a medium priority TODO  file
+  // @TODO: 3 PHP This is a low priority TODO  file
 ?>

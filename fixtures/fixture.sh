@@ -1,2 +1,3 @@
-# @ToDO: 1 This is a high priority Bash todo file
-# @ToDO: 3 This is a low priority Bash todo file
+# @TODO: 1 Bash This is a high priority todo file
+# TODO: 2 Bash This is a high priority todo file
+# @TODO: 3 Bash This is a low priority todo file

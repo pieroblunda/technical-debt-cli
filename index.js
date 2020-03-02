@@ -14,7 +14,7 @@ function traceToDo(userCustomIgnore){
   };
 
   // Extensions to search on
-  let ToDoRegEx = /@ToDo:?\s+([\d]+)?([\d\D]*?)$/gmi;
+  let ToDoRegEx = /TODO:\s+([\d]+)?([\d\D]*?)$/gm;
   let total = 0;
 
   console.log('\n→ Technical debt trace');

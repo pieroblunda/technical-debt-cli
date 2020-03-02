@@ -1,2 +1,3 @@
-// @ToDo: 1 This is a high priority ToDo in a js file
-// @ToDo: 3 This is a low priority ToDo in a js file
+// @TODO: 1 JavaScript This is a high priority TODO in file
+// TODO: 2 JavaScript This is a medium priority TODO in file
+// @TODO: 3 JavaScript This is a low priority TODO in file
