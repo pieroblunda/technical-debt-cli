@@ -31,6 +31,12 @@ As npm script
 ...
 ```
 
+## Options
+
+|Options|Typo|Example|
+|-|||
+|traceToDo(_ArrayOfStringGlob_)|Array of string glob pattern|['*.md']|
+
 ## How to collaborate
 
 We use use `GitHub Flow` as branching model. Make your `PR` in ordert to review it. Your PR will be merged after a fast review!
