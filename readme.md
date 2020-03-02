@@ -1,6 +1,8 @@
-# Technical debit tracer
+# Technical debit cli
 
-This programs show in console the technical debit documented inside your code
+Print your ToDo list in the terminal in order to manage them better according to Agile. `Technical debit cli` looks for (_language-todo_)[https://atom.io/packages/language-todo] comments in your code and prints them.
+
+**Why?** Read (this article)[pieroblunda.io/todo-rule] to get more information.
 
 ## Support languages
 `Python` `C#` `CSS` `HTML` `Js` `Md` `PHP` `Pug` `Bash` `SCSS` `Stylus` `less`

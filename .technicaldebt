@@ -1,5 +1,4 @@
 @TODO: 1 Must to match the @_TODO rule in the jsDoc function (https://jsdoc.app/tags-todo.html)
-@TODO: 3 write documentation
 TODO: 1 Add unit test
 TODO: 3 add support for Java
 TODO: 3 add support for C
@@ -7,4 +6,3 @@ TODO: 3 add support for C++
 TODO: 3 add support for Ruby
 TODO: 3 add support for Swift
 TODO: 3 add support for TypeScript
-TODO: 1 the name of the proyect is technical-debt-cli

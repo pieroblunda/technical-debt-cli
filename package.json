@@ -1,12 +1,12 @@
 {
-  "name": "technical-debt-tracer",
+  "name": "technical-debt-cli",
   "version": "1.0.0",
-  "description": "",
+  "description": "Print your ToDo list in the terminal in order to manage them better according to Agile",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Piero Blunda",
   "license": "ISC",
   "dependencies": {
     "chalk": "^3.0.0",
