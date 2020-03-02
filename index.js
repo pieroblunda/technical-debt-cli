@@ -19,7 +19,7 @@ function traceToDo(userCustomIgnore){
 
   console.log('\n→ Technical debt trace');
   console.log('======================');
-  glob(`**/*.{${options.extensions.join(',')}}`, {
+  glob([`**/*.{${options.extensions.join(',')}}`, '.technicaldebt'], {
     ignore: options.ignore,
   }).then( files => {
     files.forEach((file, i) => {
