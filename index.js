@@ -10,7 +10,7 @@ function traceToDo(userCustomIgnore){
   // Glob options
   let options = {
     ignore: gitignoreRules.add(userCustomIgnore),
-    extensions: ['md', 'js', 'css', 'php']
+    extensions: ['md', 'js', 'css', 'php', 'pug']
   };
 
   // Extensions to search on
