@@ -3,7 +3,7 @@
 This programs show in console the technical debit documented inside your code
 
 ## Support languages
-`Python` `C#` `CSS` `HTML` `JavasScript` `Markdown` `PHP` `Pug` `Bash` `SCSS` `Stylus`
+`Python` `C#` `CSS` `HTML` `JavasScript` `Markdown` `PHP` `Pug` `Bash` `SCSS` `Stylus` `less`
 
 ## How to use
 
