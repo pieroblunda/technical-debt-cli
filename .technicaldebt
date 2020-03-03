@@ -1,8 +1,10 @@
 @TODO: 1 Must to match the @_TODO rule in the jsDoc function (https://jsdoc.app/tags-todo.html)
-TODO: 1 Add unit test
 TODO: 3 add support for Java
 TODO: 3 add support for C
 TODO: 3 add support for C++
 TODO: 3 add support for Ruby
 TODO: 3 add support for Swift
 TODO: 3 add support for TypeScript
+TODO: 3 Specify the input directory
+TODO: 2 ordered result
+TODO: 1 if does not exist the file .gitignore the programs fails

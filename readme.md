@@ -39,6 +39,12 @@ As npm script
 |-|||
 |traceToDo(_ArrayOfStringGlob_)|Array of string glob pattern|['*.md']|
 
+## test
+
+```bash
+$ npm test
+```
+
 ## How to collaborate
 
 We use use `GitHub Flow` as branching model. Make your `PR` in ordert to review it. Your PR will be merged after a fast review!
