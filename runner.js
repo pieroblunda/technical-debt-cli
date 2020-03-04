@@ -1,5 +1,7 @@
 const Debt = require('./index.js');
 
-Debt.traceToDo().then( res => {
+Debt.traceToDo({
+  extensions: ['php', 'js']
+}).then( res => {
   console.log(res);
 });

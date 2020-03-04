@@ -23,8 +23,19 @@ module.exports.traceToDo = (userOptions) => {
   console.log('\n→ Technical debt trace');
   console.log('======================');
 
+  // Generate Glob pattern string to search in
+  let globPattern = [];
+  let filesExtensionsPattern;
+  if(options.extensions.length === 1){
+    filesExtensionsPattern = `**/*.${options.extensions.join(',')}`;
+  }else{
+    filesExtensionsPattern = `**/*.{${options.extensions.join(',')}}`;
+  }
+  globPattern.push(filesExtensionsPattern);
+  globPattern.push('.technicaldebt');
+
   // Trace Todo
-  return glob([`**/*.{md,js,css,php,pug,cs,html,cshtml,py,sh,scss,styl,less}`, '.technicaldebt'], {
+  return glob(globPattern, {
     ignore: options.ignore,
   }).then( files => {
 
