@@ -20,8 +20,10 @@ module.exports.traceToDo = (userOptions) => {
   let bagPromises = [];
 
   // Print Header
+  /*
   console.log('\n→ Technical debt trace');
   console.log('======================');
+  */
 
   // Generate Glob pattern string to search in
   let globPattern = [];
