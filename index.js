@@ -7,6 +7,7 @@ const defaultExtensions = ['md','js','css','php','pug','cs','html','cshtml','py'
 
 module.exports.traceToDo = (userOptions) => {
   // Validate options
+  // TODO: if options.extension is an string it fails > options.extensions.join is not a function
   if (!userOptions) userOptions = {};
   let options = {
     extensions: userOptions.extensions || defaultExtensions,
@@ -58,6 +59,8 @@ module.exports.traceToDo = (userOptions) => {
           // Remove close comment
           todoText = todoText.replace(' -->', '').replace('-->', ''); // HTML
           todoText = todoText.replace(' */', '').replace('*/', ''); // CSS
+
+          todoText = todoText.trim();
 
           // Resolve
           resolve(todoText);
