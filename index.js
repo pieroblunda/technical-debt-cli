@@ -51,7 +51,15 @@ module.exports.traceToDo = (userOptions) => {
       // Iterate over each match in the same file
       matches.forEach( (item, i) => {
         bagPromises.push(new Promise( resolve => {
-          resolve(item.replace(TodoRegEx, '$1$2'));
+          // TODO: Improve the current RegularExpression in order to ovoid manipulate the text result
+          // Text
+          let todoText = item.replace(TodoRegEx, '$1$2');
+
+          // Remove close comment
+          todoText = todoText.replace(' -->', '').replace('-->', '');
+
+          // Resolve
+          resolve(todoText);
         }));
       }); // matches.forEach
 
