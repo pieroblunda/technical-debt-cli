@@ -7,3 +7,6 @@ TODO: 3 add support for Swift
 TODO: 3 add support for TypeScript
 TODO: 2 ordered result
 TODO: 1 if does not exist the file .gitignore the programs fails
+TODO: Replace .technicaldebt -> .todo
+TODO: Add reference to TODO language package in the documentation
+TODO: Add reference to supported Editors

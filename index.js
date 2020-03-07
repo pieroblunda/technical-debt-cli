@@ -56,7 +56,8 @@ module.exports.traceToDo = (userOptions) => {
           let todoText = item.replace(TodoRegEx, '$1$2');
 
           // Remove close comment
-          todoText = todoText.replace(' -->', '').replace('-->', '');
+          todoText = todoText.replace(' -->', '').replace('-->', ''); // HTML
+          todoText = todoText.replace(' */', '').replace('*/', ''); // CSS
 
           // Resolve
           resolve(todoText);
