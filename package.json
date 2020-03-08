@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "mocha",
-    "start": "node --no-warnings --experimental-modules --es-module-specifier-resolution=node runner.js"
+    "debt": "node --no-warnings --experimental-modules --es-module-specifier-resolution=node index.js"
   },
   "author": "Piero Blunda",
   "license": "ISC",

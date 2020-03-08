@@ -18,9 +18,9 @@ class Debt {
     console.log('====================');
   }
 
-  static printFooter(){
+  static printFooter(arr){
     console.log('--------------------');
-    console.log('Total: 0');
+    console.log(`Total: ${arr.length}`);
   }
 
   static validateOptions(userOptions){
@@ -30,6 +30,16 @@ class Debt {
       extensions: userOptions.extensions || defaultExtensions,
       ignore: gitignoreRules.add(userOptions.ignore)
     };
+  }
+
+  static makeGlobPattern(options){
+    let filesExtensionsPattern;
+    if(options.extensions.length === 1){
+      filesExtensionsPattern = `**/*.${options.extensions.join(',')}`;
+    }else{
+      filesExtensionsPattern = `**/*.{${options.extensions.join(',')}}`;
+    }
+    return [filesExtensionsPattern, '.technicaldebt'];
   }
 
   static globSearch(userOptions) {
@@ -46,18 +56,11 @@ class Debt {
     this.printHeader();
 
     // Generate Glob pattern string to search in
-    let globPattern = [];
-    let filesExtensionsPattern;
-    if(options.extensions.length === 1){
-      filesExtensionsPattern = `**/*.${options.extensions.join(',')}`;
-    }else{
-      filesExtensionsPattern = `**/*.{${options.extensions.join(',')}}`;
-    }
-    globPattern.push(filesExtensionsPattern);
-    globPattern.push('.technicaldebt');
+    this.makeGlobPattern(options);
 
     // Trace Todo
-    return glob(globPattern, {
+    let globPattern = this.makeGlobPattern(options);
+    glob(globPattern, {
       ignore: options.ignore,
     }).then( files => {
 
@@ -90,12 +93,17 @@ class Debt {
       }); // files.forEach
       return Promise.all(bagPromises);
     }).then( res => {
-      this.logResults(res.sort( (a,b) => {
-        return this.getPriority(b)-this.getPriority(a);
-      }));
-      return this
+      this.logResults(this.sortByPriority(res));
+      this.printFooter(res);
     });
   } // fn traceToDo
+
+  static sortByPriority(arr) {
+    arr.sort( (a,b) => {
+      return this.getPriority(b)-this.getPriority(a);
+    });
+    return arr;
+  }
 
   static getPriority(item) {
     let priority = parseInt(item.charAt(0));
