@@ -130,4 +130,9 @@ class Debt {
   }
 };
 
+// Make runnuble
+if(process.argv[2] === 'init'){
+  Debt.init();
+}
+
 export default Debt;
