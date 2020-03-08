@@ -59,6 +59,7 @@ module.exports.traceToDo = (userOptions) => {
           // Remove close comment
           todoText = todoText.replace(' -->', '').replace('-->', ''); // HTML
           todoText = todoText.replace(' */', '').replace('*/', ''); // CSS
+          todoText = todoText.replace(' *@', '').replace('*@', ''); // CHTML
 
           todoText = todoText.trim();
 

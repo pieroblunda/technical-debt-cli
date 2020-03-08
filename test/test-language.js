@@ -1,12 +1,12 @@
 const assert = require('assert');
 const Debt = require('../index');
-const defaultExtensions = ['md','css','php', 'php','cs','html','py','less'];
+const defaultExtensions = ['md','js','css','php','pug','cs','html','cshtml','py','sh','scss','styl','less'];
 
 defaultExtensions.forEach( lang => {
 
   const config = {
     extensions: [lang],
-    ignore: ['.technicaldebt', 'readme.md']
+    ignore: ['.technicaldebt', 'readme.md', 'index.js']
   };
 
   describe(`Language ${lang}`, () => {

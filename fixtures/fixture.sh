@@ -1,3 +1,4 @@
-# @TODO: 1 Bash This is a high priority todo file
-# TODO: 2 Bash This is a high priority todo file
-# @TODO: 3 Bash This is a low priority todo file
+# TODO: sh This is a unclasiffied priority task
+# TODO: 1 sh This is a high priority task
+# TODO: 2 sh This is a medium priority task
+# TODO: 3 sh This is a low priority task
