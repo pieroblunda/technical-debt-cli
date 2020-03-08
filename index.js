@@ -90,7 +90,9 @@ class Debt {
       }); // files.forEach
       return Promise.all(bagPromises);
     }).then( res => {
-      this.logResults(res);
+      this.logResults(res.sort( (a,b) => {
+        return this.getPriority(b)-this.getPriority(a);
+      }));
       return this
     });
   } // fn traceToDo
