@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "description": "Print your ToDo list in the terminal in order to manage them better according to Agile",
   "main": "runner.js",
+  "type": "module",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "start": "node --no-warnings --experimental-modules --es-module-specifier-resolution=node runner.js"
   },
   "author": "Piero Blunda",
   "license": "ISC",

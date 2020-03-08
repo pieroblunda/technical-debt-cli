@@ -1,7 +1,5 @@
-const Debt = require('./index.js');
+import Debt from './index';
 
-Debt.traceToDo({
+Debt.init({
   extensions: ['php', 'js']
-}).then( res => {
-  console.log(res);
 });
