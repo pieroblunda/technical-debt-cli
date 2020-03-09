@@ -93,6 +93,11 @@ class Debt {
   } // fn traceToDo
 
   static sortByPriority(arr) {
+
+    // Validate
+    if(!arr || !Array.isArray(arr)) return [];
+
+    // Sort
     arr.sort( (a,b) => {
       return this.getPriority(b)-this.getPriority(a);
     });
