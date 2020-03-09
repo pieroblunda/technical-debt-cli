@@ -32,14 +32,11 @@ class Debt {
     };
   }
 
-  static makeGlobPattern(options){
-    let filesExtensionsPattern;
-    if(options.extensions.length === 1){
-      filesExtensionsPattern = `**/*.${options.extensions.join(',')}`;
-    }else{
-      filesExtensionsPattern = `**/*.{${options.extensions.join(',')}}`;
-    }
-    return [filesExtensionsPattern, '.technicaldebt'];
+  static makeGlobPattern(extensions){
+    extensions.push('technicaldebt');
+    return extensions.map( item => {
+      return `**/*.${item}`;
+    });
   }
 
   static globSearch(userOptions) {
@@ -53,10 +50,9 @@ class Debt {
     let bagPromises = [];
 
     // Generate Glob pattern string to search in
-    this.makeGlobPattern(options);
+    let globPattern = this.makeGlobPattern(options.extensions);
 
     // Trace Todo
-    let globPattern = this.makeGlobPattern(options);
     return glob(globPattern, {
       ignore: options.ignore,
     }).then( files => {
