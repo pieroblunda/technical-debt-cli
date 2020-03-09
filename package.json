@@ -5,7 +5,7 @@
   "main": "runner.js",
   "type": "module",
   "scripts": {
-    "test": "mocha",
+    "test": "mocha --experimental-modules --color",
     "debt": "node --no-warnings --experimental-modules --es-module-specifier-resolution=node index.js init"
   },
   "author": "Piero Blunda",

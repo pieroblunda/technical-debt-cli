@@ -52,15 +52,12 @@ class Debt {
     // Define local variables
     let bagPromises = [];
 
-    // Print Header
-    this.printHeader();
-
     // Generate Glob pattern string to search in
     this.makeGlobPattern(options);
 
     // Trace Todo
     let globPattern = this.makeGlobPattern(options);
-    glob(globPattern, {
+    return glob(globPattern, {
       ignore: options.ignore,
     }).then( files => {
 
@@ -92,9 +89,6 @@ class Debt {
 
       }); // files.forEach
       return Promise.all(bagPromises);
-    }).then( res => {
-      this.logResults(this.sortByPriority(res));
-      this.printFooter(res);
     });
   } // fn traceToDo
 
@@ -126,7 +120,18 @@ class Debt {
   }
 
   static init(userOptions){
-    this.globSearch(userOptions);
+    // Print Header
+    this.printHeader();
+
+    // Core
+    this.globSearch(userOptions).then( res => {
+
+      // Print result
+      this.logResults(this.sortByPriority(res));
+
+      // Print Footer
+      this.printFooter(res);
+    });
   }
 };
 

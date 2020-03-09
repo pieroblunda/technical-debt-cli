@@ -1,5 +1,5 @@
-const assert = require('assert');
-const Debt = require('../index');
+import assert from 'assert';
+import Debt from '../index.js';
 const defaultExtensions = ['md','js','css','php','pug','cs','html','cshtml','py','sh','scss','styl','less'];
 
 defaultExtensions.forEach( lang => {
@@ -13,7 +13,7 @@ defaultExtensions.forEach( lang => {
 
     let result;
     before( done => {
-      Debt.traceToDo(config).then( value => {
+      Debt.globSearch(config).then( value => {
         result = value
         done();
       });
