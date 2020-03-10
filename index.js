@@ -4,7 +4,6 @@ import chalk from 'chalk';
 import globPackage  from 'glob-gitignore';
 
 const glob = globPackage.glob;
-const gitignoreRules = ignore().add(fs.readFileSync('.gitignore').toString());
 const defaultExtensions = ['md','js','css','php','pug','cs','html','cshtml','py','sh','scss','styl','less'];
 
 //Debt.run();
@@ -26,6 +25,15 @@ class Debt {
   static validateOptions(userOptions){
     // TODO: if options.extension is an string it fails > options.extensions.join is not a function
     if (!userOptions) userOptions = {};
+
+    let gitignoreRules = [];
+    if(fs.existsSync('.gitignore')){
+      console.log('Exist');
+      gitignoreRules = ignore().add(fs.readFileSync('.gitignore').toString());
+    }else{
+      console.log('NO Exist');
+    }
+
     return {
       extensions: userOptions.extensions || defaultExtensions,
       ignore: gitignoreRules.add(userOptions.ignore)
