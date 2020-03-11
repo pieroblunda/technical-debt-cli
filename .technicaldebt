@@ -12,3 +12,4 @@ TODO: How to install locale
 TODO: How to install global
 TODO: Log only high priority task depending of the options
 TODO: Chalk does not work
+TODO: Should be log the it.skip inside the test files?
