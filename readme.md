@@ -5,7 +5,13 @@ Print your ToDo list in the terminal in order to manage them better according to
 **Why?** Read (this article)[pieroblunda.io/todo-rule] to get more information.
 
 ## Support languages
-`Python` `C#` `CSS` `HTML` `Js` `Md` `PHP` `Pug` `Bash` `SCSS` `Stylus` `less`
+`Python` `C#` `CSS` `HTML` `Js` `Markdown` `PHP` `Pug` `Bash` `SCSS` `Stylus` `less`
+
+## Install
+
+```bash
+$ npm install technical-debt-cli
+```
 
 ## How to use
 
@@ -15,29 +21,28 @@ $ node index.js
 ```
 
 Import as JavasScript module
-```js
-// TODO: not implemented yet
+```javascript
 $ import { debit } from 'technical-debt-tracer'
 
 // In your node-js server file
-debit.run();
+Debt.init(options);
 ```
 
 As npm script
 ```json
-// TODO: not implemented yet
-...
 "scripts": {
-  "debt": "node debt"
+  "debt": "npm run ????"
 }
-...
 ```
 
 ## Options
 
-|Options|Typo|Example|
-|-|||
-|traceToDo(_ArrayOfStringGlob_)|Array of string glob pattern|['*.md']|
+`option.extensions`
+__Array of strings__ - __(Optional)__ - Each item represents the extension without the dot of the file to search on. The default value is `['md','js','css','php','pug','cs','html','cshtml','py','sh','scss','styl','less']`. For performance reasons you should to define this option.
+
+
+`ignore`
+__ignore instance__ - bypass of glob-gitignore ignore option.
 
 ## test
 
@@ -47,4 +52,6 @@ $ npm test
 
 ## How to collaborate
 
-We use use `GitHub Flow` as branching model. Make your `PR` in ordert to review it. Your PR will be merged after a fast review!
+We use [GitHub Flow](link) as branching model. Make your `PR` in order to review it. Your PR will be merged after a fast review.
+
+Pro Tip! View the .technicaldebt file to know what contribuite to.

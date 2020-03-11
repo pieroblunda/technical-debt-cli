@@ -1,5 +1,4 @@
 {
-  "diff": true,
   "reporter": "spec",
   "color": true
 }
