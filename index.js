@@ -23,15 +23,11 @@ class Debt {
   }
 
   static validateOptions(userOptions){
-    // TODO: if options.extension is an string it fails > options.extensions.join is not a function
     if (!userOptions) userOptions = {};
 
-    let gitignoreRules = [];
+    let gitignoreRules = ignore();
     if(fs.existsSync('.gitignore')){
-      console.log('Exist');
-      gitignoreRules = ignore().add(fs.readFileSync('.gitignore').toString());
-    }else{
-      console.log('NO Exist');
+      gitignoreRules = gitignoreRules.add(fs.readFileSync('.gitignore').toString());
     }
 
     return {
