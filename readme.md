@@ -1,6 +1,6 @@
 # Technical debit cli
 
-Print your ToDo list in the terminal in order to manage them better according to Agile. `Technical debit cli` looks for [_language-todo_](https://atom.io/packages/language-todo) comments in your code and prints them.
+Print your ToDo list in the terminal in order to manage them better according to Agile. `todo-cli` looks for [_language-todo_](https://atom.io/packages/language-todo) comments in your code and prints them.
 
 **Why?** Read (this article)[pieroblunda.io/todo-rule] to get more information.
 
@@ -10,7 +10,7 @@ Print your ToDo list in the terminal in order to manage them better according to
 ## Install
 
 ```bash
-$ npm i --save technical-debt-cli
+$ npm i --todo-cli
 ```
 
 ## How to use
@@ -32,7 +32,7 @@ Debt.init(options);
 As npm script
 ```json
 "scripts": {
-  "debt": "npm run debt"
+  "todo": "npm run todo"
 }
 ```
 

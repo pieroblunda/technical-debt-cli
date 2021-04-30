@@ -1,25 +1,29 @@
 import fs from 'fs';
 import ignore from 'ignore';
-import chalk from 'chalk';
 import globPackage  from 'glob-gitignore';
 
 const glob = globPackage.glob;
-const defaultExtensions = ['md','js','css','php','pug','cs','html','cshtml','py','sh','scss','styl','less'];
 
 //Debt.run();
-class Debt {
+class Todo {
   constructor() {
     // Code
   }
 
   static printHeader(){
-    console.log('\n→ Technical debt cli');
+    console.log('\n→ Todo cli');
     console.log('====================');
   }
 
   static printFooter(arr){
     console.log('--------------------');
     console.log(`Total: ${arr.length}`);
+  }
+  
+  static printVerbose(){
+    console.log('--------------------');
+    console.log(`Target files:`);
+    console.log(this.files);
   }
 
   static validateOptions(userOptions){
@@ -31,37 +35,27 @@ class Debt {
     }
 
     return {
-      extensions: userOptions.extensions || defaultExtensions,
-      ignore: gitignoreRules.add(userOptions.ignore)
+      target: userOptions.target,
+      ignore: gitignoreRules.add(userOptions.ignore),
+      verbose: userOptions.verbose
     };
   }
 
-  static makeGlobPattern(extensions){
-    extensions.push('technicaldebt');
-    return extensions.map( item => {
-      return `**/*.${item}`;
-    });
-  }
-
-  static globSearch(userOptions) {
-    // Validate options
-    let options = this.validateOptions(userOptions);
-
+  static globSearch(options) {
     // Extensions to search on
     const TodoRegEx = /TODO:\s+([\d]+)?([\d\D]*?)$/gm;
 
     // Define local variables
     let bagPromises = [];
 
-    // Generate Glob pattern string to search in
-    let globPattern = this.makeGlobPattern(options.extensions);
-
     // Trace Todo
-    return glob(globPattern, {
+    return glob(options.target, {
       ignore: options.ignore,
     }).then( files => {
 
       // Iterate over each file
+      this.files = files;
+      //console.log(files);
       files.forEach( file => {
 
         // Read the file
@@ -125,24 +119,36 @@ class Debt {
   }
 
   static init(userOptions){
+    // Validate options
+    this.options = this.validateOptions(userOptions);
+    
     // Print Header
     this.printHeader();
 
     // Core
-    this.globSearch(userOptions).then( res => {
+    this.globSearch(this.options).then( res => {
 
       // Print result
       this.logResults(this.sortByPriority(res));
 
       // Print Footer
       this.printFooter(res);
+      
+      // Print verbose
+      if(this.options.verbose){
+        this.printVerbose();
+      }
     });
   }
 };
 
 // Make runnuble
 if(process.argv[2] === 'init'){
-  Debt.init();
+  Todo.init({
+    target: ['fixtures/*.{js,styl}'], // -> /{static,build/public}/*.{js}'
+    ignore: ['readme.md', 'index.js', 'node_modules'],
+    verbose: false
+  });
 }
 
-export default Debt;
+export default Todo;

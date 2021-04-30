@@ -5,13 +5,12 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "mocha --experimental-modules --color",
-    "debt": "node --no-warnings --experimental-modules --es-module-specifier-resolution=node index.js init"
+    "test": "mocha",
+    "todo": "node index.js init"
   },
   "author": "Piero Blunda",
   "license": "MIT",
   "dependencies": {
-    "chalk": "^3.0.0",
     "gitignore-to-glob": "^0.3.0",
     "glob-gitignore": "^1.0.14",
     "ignore": "^5.1.4"

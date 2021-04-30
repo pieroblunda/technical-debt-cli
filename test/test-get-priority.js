@@ -1,6 +1,6 @@
 import assert from 'assert';
 import Debt from '../index.js';
-
+// TODO: ESTO NO TIENE QUE APARECER
 describe(`Debt.getPriority method`, () => {
 
   it('Should return priority 0', done => {
