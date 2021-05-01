@@ -5,7 +5,7 @@ import globPackage  from 'glob-gitignore';
 const glob = globPackage.glob;
 
 //Debt.run();
-class Todo {
+class TodoCli {
   
   static printHeader(){
     console.log('\n→ Todo cli');
@@ -121,14 +121,4 @@ class Todo {
   }
 };
 
-// Make runnuble
-if(process.argv[2] === 'init'){
-  Todo.init({
-    target: ['fixtures/*.*'], // -> /{static,build/public}/*.{js}'
-    ignore: ['readme.md', 'index.js', 'node_modules'],
-    verbose: true,
-    re: null
-  });
-}
-
-export default Todo;
+export default TodoCli;

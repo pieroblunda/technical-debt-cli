@@ -5,8 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "mocha",
-    "todo": "node index.js init"
+    "test": "mocha"
   },
   "author": "Piero Blunda",
   "license": "MIT",
