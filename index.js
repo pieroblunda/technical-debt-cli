@@ -6,10 +6,7 @@ const glob = globPackage.glob;
 
 //Debt.run();
 class Todo {
-  constructor() {
-    // Code
-  }
-
+  
   static printHeader(){
     console.log('\n→ Todo cli');
     console.log('====================');
@@ -42,47 +39,29 @@ class Todo {
   }
 
   static globSearch(options) {
-    // Extensions to search on
-    const TodoRegEx = /TODO:\s+([\d]+)?([\d\D]*?)$/gm;
+    
+    const TodoRegEx = /(?:<%|<#|<!--|\/\*|\/\/|#|'|--|%|=begin|\{\-|\(\*|@\*)\s?@?todo:\s?(.*?)(?:%>|#>|\-\->|\*\/|\n|=end|\-\}|\*\)|\*@)/gmi;
 
     // Define local variables
-    let bagPromises = [];
+    let issues = [];
 
     // Trace Todo
     return glob(options.target, {
       ignore: options.ignore,
     }).then( files => {
-
+      
       // Iterate over each file
       this.files = files;
-      //console.log(files);
       files.forEach( file => {
-
         // Read the file
-        let matches = fs.readFileSync(file, 'utf8').match(TodoRegEx);
-        if (!matches) return false;
-
-        // Iterate over each match in the same file
-        matches.forEach( (item, i) => {
-          bagPromises.push(new Promise( resolve => {
-            // TODO: Improve the current RegularExpression in order to ovoid manipulate the text result
-            // Text
-            let todoText = item.replace(TodoRegEx, '$1$2');
-
-            // Remove close comment
-            todoText = todoText.replace(' -->', '').replace('-->', ''); // HTML
-            todoText = todoText.replace(' */', '').replace('*/', ''); // CSS
-            todoText = todoText.replace(' *@', '').replace('*@', ''); // CHTML
-
-            todoText = todoText.trim();
-
-            // Resolve
-            resolve(todoText);
-          }));
-        }); // matches.forEach
-
+        let fileContent = fs.readFileSync(file, 'utf8');
+        let matches;
+        while(matches = TodoRegEx.exec(fileContent)) {
+          issues.push(matches[1]);
+        }
       }); // files.forEach
-      return Promise.all(bagPromises);
+      
+      return issues;
     });
   } // fn traceToDo
 
@@ -145,9 +124,10 @@ class Todo {
 // Make runnuble
 if(process.argv[2] === 'init'){
   Todo.init({
-    target: ['fixtures/*.{js,styl}'], // -> /{static,build/public}/*.{js}'
+    target: ['fixtures/*.*'], // -> /{static,build/public}/*.{js}'
     ignore: ['readme.md', 'index.js', 'node_modules'],
-    verbose: false
+    verbose: true,
+    re: null
   });
 }
 
