@@ -1,15 +1,5 @@
 @TODO: 1 Must to match the @_TODO rule in the jsDoc function (https://jsdoc.app/tags-todo.html)
-TODO: 3 add support for Java
-TODO: 3 add support for C
-TODO: 3 add support for C++
-TODO: 3 add support for Ruby
-TODO: 3 add support for Swift
-TODO: 3 add support for TypeScript
-TODO: Replace .technicaldebt -> .todo
-TODO: Add reference to TODO language package in the documentation
 TODO: Add reference to supported Editors
-TODO: How to install locale
-TODO: How to install global
 TODO: Log only high priority task depending of the options
 TODO: Chalk does not work
-TODO: Should be log the it.skip inside the test files?
+Todo: Insert a todo from the command line

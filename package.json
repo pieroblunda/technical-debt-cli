@@ -1,6 +1,6 @@
 {
   "name": "technical-debt-cli",
-  "version": "1.0.0",
+  "version": "2.1.0",
   "description": "Print your ToDo list in the terminal in order to manage them better according to Agile",
   "main": "index.js",
   "type": "module",
