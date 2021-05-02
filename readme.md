@@ -1,14 +1,13 @@
 # Technical debit cli
 
-Print your ToDo list in the terminal in order to manage them better according to Agile. `todo-cli` looks for [_language-todo_](https://atom.io/packages/language-todo) comments in your code and prints them.
+Print your ToDo as an alfabetical ordered list in the terminal in order to manage better your technical debt. `technical-debt-cli` looks for [_language-todo_](https://atom.io/packages/language-todo) comments in your code and prints them. Useful to watch your technical debt and remember how big is it.
+
+![Screen record](./fixtures/screen-record.gif)
 
 ## Why?
 * [Wikipedia - technical debt](https://en.wikipedia.org/wiki/Technical_debt)
 * [Medium article - How to manage a technical debt](https://pieroblunda.medium.com/how-to-manage-a-technical-debt-53af3443b927)
 * [Agile article - How to manage a technical debt](https://4agile.pl/how-to-manage-technical-debt/)
-
-## Support languages
-`Euphoria` `Haskell` `SQL` `Ada` `AppleScript` `Eiffel` `Lua` `VHDL` `SGML` `PureScript` `ActionScript` `C` `C++` `C#` `D` `F#` `Go` `Java` `JavaScript` `Kotlin` `Delphi` `Objective-C` `PHP` `Rust` `Scala` `SASS` `Swift` `Xojo` `Bourne shell and other UNIX shells` `Cobra` `Perl` `Python` `Ruby` `Seed7` `Windows PowerShell` `PHP` `R` `Make` `Maple` `Elixir` `Nim` `TeX` `Prolog` `MATLAB` `Erlang` `S-Lang` `Visual Prolog` `ActionScript` `AutoHotkey` `C` `C++` `C#` `D,Go` `Java` `JavaScript` `kotlin` `Objective-C` `PHP` `PL/I` `Prolog` `Rexx` `Rust` `Scala` `SAS` `SASS` `SQL` `Swift` `Visual Prolog` `CSS` `Razor`
 
 ## Install
 
@@ -19,11 +18,27 @@ $ npm install technical-debt-cli
 ## Usage
 
 Import as JavasScript module
-```javascript
+```js
 import TodoCli from 'technical-debt-cli';
 
 // On startup a server file
 TodoCli.init(options);
+```
+
+## Output
+
+The list will be printed in the terminal when code run.
+
+> Pro tip!: Write a comment starting with _`[number]`_ to order them by priority 
+
+```bash
+→ List of your technical debt:
+================================
+[1] Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+[2] Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+[3] Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+--------------------
+Total: 3
 ```
 
 ## Options
@@ -80,6 +95,9 @@ __Regular Expresion__ - Regular expression to use on matches. It is only one reg
 (* @todo: Capture 11 *)
 {{! @todo: Capture 12 }}
 ```
+
+## Support languages
+`Euphoria` `Haskell` `SQL` `Ada` `AppleScript` `Eiffel` `Lua` `VHDL` `SGML` `PureScript` `ActionScript` `C` `C++` `C#` `D` `F#` `Go` `Java` `JavaScript` `Kotlin` `Delphi` `Objective-C` `PHP` `Rust` `Scala` `SASS` `Swift` `Xojo` `Bourne shell and other UNIX shells` `Cobra` `Perl` `Python` `Ruby` `Seed7` `Windows PowerShell` `PHP` `R` `Make` `Maple` `Elixir` `Nim` `TeX` `Prolog` `MATLAB` `Erlang` `S-Lang` `Visual Prolog` `ActionScript` `AutoHotkey` `C` `C++` `C#` `D,Go` `Java` `JavaScript` `kotlin` `Objective-C` `PHP` `PL/I` `Prolog` `Rexx` `Rust` `Scala` `SAS` `SASS` `SQL` `Swift` `Visual Prolog` `CSS` `Razor`
 
 ## Editors
 
