@@ -6,3 +6,4 @@ Todo: Insert a todo from the command line
 Todo: La regular expresion es una constante y no se puede cambiar.
 Todo: En la documentacion no esta escrito que por defecto se ignoran los archivos del gitignore.
 Todo: Poner el video en el readme
+Todo: En el readme no esta explicado el sortByPriority y la sintaxis del [1] de prioridad
