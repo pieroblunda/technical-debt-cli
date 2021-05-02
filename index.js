@@ -4,7 +4,6 @@ import globPackage  from 'glob-gitignore';
 
 const glob = globPackage.glob;
 
-//Debt.run();
 class TodoCli {
   
   static printHeader(){

@@ -3,3 +3,5 @@ TODO: Add reference to supported Editors
 TODO: Log only high priority task depending of the options
 TODO: Chalk does not work
 Todo: Insert a todo from the command line
+Todo: La regular expresion es una constante y no se puede cambiar.
+Todo: En la documentacion no esta escrito que por defecto se ignoran los archivos del gitignore.
